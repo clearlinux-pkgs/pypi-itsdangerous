@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x7A1C87E3F5BC42A8 (davidism@gmail.com)
 #
 Name     : pypi-itsdangerous
-Version  : 2.0.1
-Release  : 51
-URL      : https://files.pythonhosted.org/packages/58/66/d6c5859dcac92b442626427a8c7a42322068c5cd5d4a463ce78b93f730b7/itsdangerous-2.0.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/58/66/d6c5859dcac92b442626427a8c7a42322068c5cd5d4a463ce78b93f730b7/itsdangerous-2.0.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/58/66/d6c5859dcac92b442626427a8c7a42322068c5cd5d4a463ce78b93f730b7/itsdangerous-2.0.1.tar.gz.asc
+Version  : 2.1.0
+Release  : 52
+URL      : https://files.pythonhosted.org/packages/82/00/89037083314067f1605233f6f30b94fdddc89d18e283b30b0c5be9e7f801/itsdangerous-2.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/82/00/89037083314067f1605233f6f30b94fdddc89d18e283b30b0c5be9e7f801/itsdangerous-2.1.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/82/00/89037083314067f1605233f6f30b94fdddc89d18e283b30b0c5be9e7f801/itsdangerous-2.1.0.tar.gz.asc
 Summary  : Safely pass data to untrusted environments and back.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -17,26 +17,14 @@ Requires: pypi-itsdangerous-license = %{version}-%{release}
 Requires: pypi-itsdangerous-python = %{version}-%{release}
 Requires: pypi-itsdangerous-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: itsdangerous
-Provides: itsdangerous-python
-Provides: itsdangerous-python3
 
 %description
+ItsDangerous
 ============
-        
-        ... so better sign this
-        
-        Various helpers to pass data to untrusted environments and to get it
-        back safe and sound. Data is cryptographically signed to ensure that a
-        token has not been tampered with.
-        
-        It's possible to customize how data is serialized. Data is compressed as
-        needed. A timestamp can be added and verified automatically while
-        loading a token.
-        
-        
-        Installing
-        ----------
+... so better sign this
+Various helpers to pass data to untrusted environments and to get it
+back safe and sound. Data is cryptographically signed to ensure that a
+token has not been tampered with.
 
 %package license
 Summary: license components for the pypi-itsdangerous package.
@@ -66,15 +54,15 @@ python3 components for the pypi-itsdangerous package.
 
 
 %prep
-%setup -q -n itsdangerous-2.0.1
-cd %{_builddir}/itsdangerous-2.0.1
+%setup -q -n itsdangerous-2.1.0
+cd %{_builddir}/itsdangerous-2.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641446920
+export SOURCE_DATE_EPOCH=1645213767
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -87,7 +75,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-itsdangerous
-cp %{_builddir}/itsdangerous-2.0.1/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-itsdangerous/a814758bca3dc0a25555dabbf2576cdc43cd8423
+cp %{_builddir}/itsdangerous-2.1.0/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-itsdangerous/a814758bca3dc0a25555dabbf2576cdc43cd8423
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
