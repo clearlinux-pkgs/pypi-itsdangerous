@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x7A1C87E3F5BC42A8 (davidism@gmail.com)
 #
 Name     : pypi-itsdangerous
-Version  : 2.1.1
-Release  : 53
-URL      : https://files.pythonhosted.org/packages/9d/86/39f81e23f49eaf62d22248d48771dbf3bce7c52dfdf566e3d8d4c0657f15/itsdangerous-2.1.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/9d/86/39f81e23f49eaf62d22248d48771dbf3bce7c52dfdf566e3d8d4c0657f15/itsdangerous-2.1.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/9d/86/39f81e23f49eaf62d22248d48771dbf3bce7c52dfdf566e3d8d4c0657f15/itsdangerous-2.1.1.tar.gz.asc
+Version  : 2.1.2
+Release  : 54
+URL      : https://files.pythonhosted.org/packages/7f/a1/d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08/itsdangerous-2.1.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/7f/a1/d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08/itsdangerous-2.1.2.tar.gz
+Source1  : https://files.pythonhosted.org/packages/7f/a1/d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08/itsdangerous-2.1.2.tar.gz.asc
 Summary  : Safely pass data to untrusted environments and back.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -54,15 +54,15 @@ python3 components for the pypi-itsdangerous package.
 
 
 %prep
-%setup -q -n itsdangerous-2.1.1
-cd %{_builddir}/itsdangerous-2.1.1
+%setup -q -n itsdangerous-2.1.2
+cd %{_builddir}/itsdangerous-2.1.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646875778
+export SOURCE_DATE_EPOCH=1648231734
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -75,7 +75,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-itsdangerous
-cp %{_builddir}/itsdangerous-2.1.1/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-itsdangerous/a814758bca3dc0a25555dabbf2576cdc43cd8423
+cp %{_builddir}/itsdangerous-2.1.2/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-itsdangerous/a814758bca3dc0a25555dabbf2576cdc43cd8423
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
