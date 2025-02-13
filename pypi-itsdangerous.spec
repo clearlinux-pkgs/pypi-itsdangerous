@@ -7,7 +7,7 @@
 #
 Name     : pypi-itsdangerous
 Version  : 2.2.0
-Release  : 70
+Release  : 71
 URL      : https://files.pythonhosted.org/packages/9c/cb/8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31d/itsdangerous-2.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9c/cb/8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31d/itsdangerous-2.2.0.tar.gz
 Summary  : Safely pass data to untrusted environments and back.
